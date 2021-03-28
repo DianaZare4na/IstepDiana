@@ -12,6 +12,8 @@ article{
 	width: 1360px;
 	margin: auto;
 	box-sizing: border-box;
+	border: #b5b5b5 2px solid;
+	padding-bottom: 20px;
 }
 #avatar{
 	display: none;
@@ -19,7 +21,6 @@ article{
 .header{
 	display: flex;
 	background-color: #1c558a;
-	/*height: 78px;*/
 }
 .header img{
 	padding: 6px;
@@ -87,4 +88,49 @@ form img{
 	text-align: center;
 	padding:10px;
 	border-radius: 5px;
+}
+.container{
+	display: grid;
+	grid-template-columns: 220px 500px 500px;
+	grid-gap: 2.3em;
+	align-items: start;
+}
+.formsave{
+	margin-top: 2.3em;
+	display: grid;
+	grid-template-columns: 100%;
+	grid-gap: 1em;
+
+}
+.formpass{
+	margin-top: 2.3em;
+	display: grid;
+	grid-gap: 1em;
+	grid-template-columns: 100%;
+}
+.container input{
+	padding:10px;
+	border:none;
+	border: 1px #848484 solid;
+	border-radius: 5px;
+}
+.formsave input:last-child {
+	color:white;
+	background-color: #6d747e;
+}
+.formpass input:last-child {
+	color:white;
+	background-color: #6d747e;
+}
+.formsave input:last-child:hover{
+	background: linear-gradient(gray, darkgray);
+}
+.formpass input:last-child:hover{
+	background: linear-gradient(gray, darkgray);
+}
+.formava label:hover{
+	background: linear-gradient(gray, darkgray);
+}
+a:hover{
+	text-shadow: 1px 1px 2px black, 0 0 1em white;
 }

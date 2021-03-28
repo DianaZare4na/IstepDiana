@@ -8,46 +8,50 @@
 </head>
 <body>
 	<article>
-	<header>
-		<div class="header">
-			<a href="#"><img src="img/pngegg.png" alt="" id="avaone"></a>
-			<div class="amenu">
-				<a href="#">Home</a>
-				<a href="#">Homework</a>
-				<a href="#"><strong>Settings</strong></a>
+		<header>
+			<div class="header">
+				<a href="#">
+					<img src="img/pngegg.png" alt="" id="avaone">
+				</a>
+				<div class="amenu">
+					<a href="#">Home</a>
+					<a href="#">Homework</a>
+					<a href="#"><strong>Settings</strong></a>
+				</div>
+				<a href="#">
+					<img src="img/av_64.png" alt="" id="ava">
+				</a>
 			</div>
-			<a href="#"><img src="img/av_64.png" alt="" id="ava"></a>
-		</div>
-	</header>
-	<div class="container">
+		</header>
 		<p>Settings</p>
 		<div class="eiches">
 			<h2>AVATAR</h2>
 			<h2>STUDENT'S INFO</h2>
 			<h2>CHANGE PASSWORD</h2>
 		</div>
-		<form action="#" method="post" class="formava">
-			<img src="img/av_256.png" alt="">
-			<label for="avatar">Choose photo</label>
-			<!-- <input type="file" id="avatar" name="avatar"accept="image/png, image/jpeg"> -->
-			<input type="file" id="avatar" name="avatar"accept="image/*">
-		</form>
-		<form action="#" method="post">
-			<input type="text" placeholder="First name" pattern="[A-Za-z]{,50}" maxlength="16" required>
-			<input type="text" placeholder="Last name" pattern="[A-Za-z]{,50}" maxlength="16" required>
-			<input type="email" placeholder="Email" maxlength="150" required>
-			<input type="tel" placeholder="Phone number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-			<input type="text" placeholder="Address">
-			<input type="text">
-			<input type="text">
-		</form>
-		<form action="#" method="post">
-			<input type="text">
-			<input type="text">
-			<input type="text">
-			<input type="text">
-		</form>
-	</div>
+		<div class="container">
+			<form action="#" method="post" class="formava">
+				<img src="img/av_256.png" alt="">
+				<label for="avatar">Choose photo</label>
+				<!-- <input type="file" id="avatar" name="avatar"accept="image/png, image/jpeg"> -->
+				<input type="file" id="avatar" name="avatar"accept="image/*">
+			</form>
+			<form action="#" method="post" class="formsave">
+				<input type="text" placeholder="First name" pattern="[A-Za-z]{,50}" maxlength="16" required>
+				<input type="text" placeholder="Last name" pattern="[A-Za-z]{,50}" maxlength="16" required>
+				<input type="email" placeholder="Email" maxlength="150" required>
+				<input type="tel" placeholder="Phone number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+				<input type="text" placeholder="Address" maxlength="150">
+				<input type="url" placeholder="FB Link" pattern="https://.*">
+				<input type="submit" value="Save changer">
+			</form>
+			<form action="#" method="post" class="formpass">
+				<input type="password" placeholder="Old password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{50,}" required>
+				<input type="password" placeholder="New password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{50,}" required>
+				<input type="password" placeholder="Repeat password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{50,}" required>
+				<input type="submit" value="Chang password">
+			</form>
+		</div>
 	</article>
 </body>
 </html>
