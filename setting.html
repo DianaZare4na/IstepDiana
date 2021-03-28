@@ -10,33 +10,34 @@
 	<article>
 	<header>
 		<div class="header">
-			<img src="img/pngegg.png" alt="" id="avaone">
+			<a href="#"><img src="img/pngegg.png" alt="" id="avaone"></a>
 			<div class="amenu">
 				<a href="#">Home</a>
 				<a href="#">Homework</a>
 				<a href="#"><strong>Settings</strong></a>
 			</div>
-			<img src="img/av_64.png" alt="" id="ava">
+			<a href="#"><img src="img/av_64.png" alt="" id="ava"></a>
 		</div>
 	</header>
 	<div class="container">
-		<h1>Setting</h1>
+		<p>Settings</p>
 		<div class="eiches">
 			<h2>AVATAR</h2>
 			<h2>STUDENT'S INFO</h2>
 			<h2>CHANGE PASSWORD</h2>
 		</div>
-		<form action="#" method="post">
+		<form action="#" method="post" class="formava">
 			<img src="img/av_256.png" alt="">
 			<label for="avatar">Choose photo</label>
-			<input type="file" id="avatar" name="avatar"accept="image/png, image/jpeg">
+			<!-- <input type="file" id="avatar" name="avatar"accept="image/png, image/jpeg"> -->
+			<input type="file" id="avatar" name="avatar"accept="image/*">
 		</form>
 		<form action="#" method="post">
-			<input type="text">
-			<input type="text">
-			<input type="text">
-			<input type="text">
-			<input type="text">
+			<input type="text" placeholder="First name" pattern="[A-Za-z]{,50}" maxlength="16" required>
+			<input type="text" placeholder="Last name" pattern="[A-Za-z]{,50}" maxlength="16" required>
+			<input type="email" placeholder="Email" maxlength="150" required>
+			<input type="tel" placeholder="Phone number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+			<input type="text" placeholder="Address">
 			<input type="text">
 			<input type="text">
 		</form>
