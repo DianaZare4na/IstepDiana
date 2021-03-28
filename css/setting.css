@@ -2,3 +2,41 @@
 	margin:0;
 	padding: 0;
 }
+body{
+	font-family: Arial;
+}
+article{
+	width: 1360px;
+	margin: auto;
+	box-sizing: border-box;
+}
+#avatar{
+	display: none;
+}
+.header{
+	display: flex;
+	background-color: #1c558a;
+	height: 82px;
+}
+.header img{
+	padding: 7px;
+}
+strong{
+	color: white;
+}
+a{
+	display: inline-block;
+	text-decoration: none;
+	color: #88b8e0;
+	padding-right: 10px;
+}
+.header:first-child img{
+	padding-right: 30px;
+	padding-left: 60px;
+}
+.amenu{
+	padding-top: 30px;
+}
+#ava{
+	margin-left: 800px;
+}
