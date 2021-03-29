@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>library</title>
+	<link rel="stylesheet" href="css/inputs.css">
+	<link rel="stylesheet" href="css/inputstyle.css">
+</head>
+<body>
+	<div class="container">
+		<form action="#" method="post">
+		<h2>Inputs</h2>
+		<div class="inputs">
+			<input type="text" placeholder="Enter some text" pattern="[A-Za-z]{,50}" maxlength="16" required>
+			<input type="text" placeholder="valid texs" pattern="[A-Za-z]{,50}" maxlength="16" required>
+			<input type="text" placeholder="invalid text" pattern="[A-Za-z]{,50}" maxlength="16" required>
+		</div>
+		<h2>Check boxes</h2>
+		<div class="chek">
+			<label for="checkone">
+				<input type="checkbox" id="checkone" checked class="all">
+				<div class="all">
+					<div class="lone">
+						<div class="green">
+						</div>
+					</div>
+					<div class="subon">Subscribe</div>
+				</div>
+			</label>
+			
+			<label for="checktwo">
+				<input type="checkbox" id="checktwo" class="all">
+				<div class="alltwo">
+					<div class="ltwo">
+						<div class="red">
+						</div>
+					</div>
+					<div class="subtw">Subscribe</div>
+				</div>
+			</label>
+		</div>
+		<h2>Radio buttons</h2>
+		<div class="radio">
+			<input type="radio" id="radioone" checked class="all"><label for="radioone"></label>
+			<input type="radio" id="radiotwo" class="all"><label for="radiotwo"></label>
+		</div>
+		<h2>Buttons</h2>
+		<div class="buttons">
+			<input type="submit" value="Active">
+			<input type="submit" value="Hover">
+			<input type="submit" value="Danger">
+			<input type="submit" value="Hover">
+			<input type="submit" value="Disabled">
+			<input type="submit" value="+">
+			<input type="submit" value="-">
+		</div>
+		<h2>Text area</h2>
+		<textarea name="textarea" id="" cols="30" rows="10"></textarea>
+		</form>
+	</div>
+</body>
+</html>

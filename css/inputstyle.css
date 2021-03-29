@@ -1,0 +1,103 @@
+.inputs input{
+	border:none;
+	border-radius: 5px;
+	border: gray solid 1px;
+	padding:8px 60px 8px 20px;
+}
+.buttons input{
+	margin-right: 10px;
+	border: none;
+	border-radius: 5px;
+	padding:10px 20px;
+	color: white;
+}
+.buttons input:first-child{
+	background-color: #43ac45;
+}
+.buttons input:nth-child(2){
+	background-color: #337839;
+}
+.buttons input:nth-child(3){
+	background-color: #f83e67;
+}
+.buttons input:nth-child(4){
+	background-color: #9b2136;
+}
+.buttons input:nth-child(5){
+	background-color: #808080;
+}
+.buttons input:nth-child(6){
+	background-color: #50ab44;
+	border-radius: 50%;
+	padding:10px 15px;
+}
+.buttons input:nth-child(7){
+	background-color: #e43f61;
+	border-radius: 50%;
+	padding:10px 15px;
+}
+.inputs input:required:valid{
+	border-color: green;
+}
+.inputs input:required:invalid{
+	border-color: red;
+}
+#checkone{
+	display: none;
+}
+#checktwo{
+	display: none;
+}
+#radioone{
+	display: none;
+}
+#radiotwo{
+	display: none;
+}
+.lone{
+	width: 30px;
+	height: 15px;
+	border-radius: 3px;
+	border: green 1px solid;
+}
+.green{
+	width: 50%;
+	height: 100%;
+	background-color: green;
+	border-radius: 3px;
+}
+.ltwo{
+	width: 30px;
+	height: 15px;
+	border-radius: 3px;
+	border: red 1px solid;
+}
+.red{
+	width: 50%;
+	height: 100%;
+	background-color: red;
+	border-radius: 3px;
+}
+.subon{
+	position: absolute;
+	top:0;
+	left:40px;
+}
+.all{
+	position: relative;
+	padding-right: 100px;
+}
+.subtw{
+	position: absolute;
+	top:0;
+	left:40px;
+}
+.alltwo{
+	position: relative;
+}
+.chek{
+	display:flex;
+}
+.chek input:checked + label > .lone > .green{
+	margin-right: 50%;
+}
