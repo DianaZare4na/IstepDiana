@@ -1,0 +1,32 @@
+.header{
+	display: flex;
+	background-color: #1c558a;
+}
+/*.header img{
+	padding: 6px;
+}*/
+strong{
+	color: white;
+}
+.header a{
+	display: inline-block;
+	text-decoration: none;
+	color: #88b8e0;
+	padding-right: 10px;
+}
+.header:first-child img{
+	padding-right: 10px;
+	padding-left: 60px;
+}
+.amenu{
+	padding-top: 23px;
+}
+#ava{
+	margin-left: 410%;
+}
+a:hover{
+	text-shadow: 1px 1px 2px black, 0 0 1em white;
+}
+/*#avaone{
+	width: 64px;
+}*/
