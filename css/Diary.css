@@ -37,9 +37,11 @@ h1{
 }
 .week p:last-child{
 	padding: 0 40px 0 15px;
+	margin-top: -10px;
 }
 .week p:first-child{
 	padding: 0 15px;
+
 }
 .week small{
 	margin-left: 60%;
@@ -53,4 +55,19 @@ h1{
 }
 .program p:last-child{
 	margin-top: -15px;
+}
+.meeting{
+	display: flex;
+	border: 1px gray solid;
+	padding: 10px 0 10px 20px;
+}
+.meeting p:first-child{
+	padding: 0 15px;
+}
+.meeting p:last-child{
+	padding: 0 40px 0 15px;
+	margin-top: -10px;
+}
+.meeting small{
+	margin-left: 33%;
 }
