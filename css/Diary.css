@@ -2,10 +2,8 @@
 	display: flex;
 	background-color: #1c558a;
 }
-/*.header img{
-	padding: 6px;
-}*/
-strong{
+
+.home{
 	color: white;
 }
 .header a{
@@ -23,10 +21,36 @@ strong{
 }
 #ava{
 	margin-left: 410%;
+	margin-top: 3px;
 }
 a:hover{
 	text-shadow: 1px 1px 2px black, 0 0 1em white;
 }
-/*#avaone{
-	width: 64px;
-}*/
+h1{
+	text-align: center;
+	padding-top: 20px;
+}
+.week{
+	display: flex;
+	border: 1px gray solid;
+	padding: 10px 0 10px 20px;
+}
+.week p:last-child{
+	padding: 0 40px 0 15px;
+}
+.week p:first-child{
+	padding: 0 15px;
+}
+.week small{
+	margin-left: 60%;
+}
+.program{
+	border: 1px gray solid;
+	padding:8px 15px 0 20px;
+}
+.program small{
+	margin-left: 46%;
+}
+.program p:last-child{
+	margin-top: -15px;
+}
