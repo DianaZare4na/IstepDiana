@@ -71,3 +71,11 @@ h1{
 .meeting small{
 	margin-left: 33%;
 }
+h2{
+	text-align: center;
+	padding-top: 20px;
+}
+/*.main{
+	border: 3px gray solid;
+	padding:0 20px;
+} */
