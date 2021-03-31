@@ -1,6 +1,8 @@
 .header{
 	display: flex;
 	background-color: #1c558a;
+	/*border: 3px gray solid;
+	border-bottom: none;*/
 }
 
 .home{
@@ -51,7 +53,7 @@ h1{
 	padding:8px 15px 0 20px;
 }
 .program small{
-	margin-left: 46%;
+	margin-left: 45%;
 }
 .program p:last-child{
 	margin-top: -15px;
@@ -69,13 +71,62 @@ h1{
 	margin-top: -10px;
 }
 .meeting small{
-	margin-left: 33%;
+	margin-left: 30%;
 }
 h2{
 	text-align: center;
 	padding-top: 20px;
 }
-/*.main{
+.maine{
 	border: 3px gray solid;
-	padding:0 20px;
-} */
+	/*width: 100%;*/
+	/*box-sizing: border-box;*/
+} 
+span{
+	display: inline-block;
+}
+ul{
+	list-style-type: none;
+}
+li img{
+	width: 40px;
+	
+}
+.one{
+	font-weight: bolder;
+	font-size: 20px;
+	margin-right: -5px;
+	padding-left: 20px;
+}
+.attendedr{
+	border: 1px gray solid;
+	position: relative;
+	padding: 0.6px 10px;
+}
+.attendedr::before, .attendedr::after {
+    content: ''; 
+    position: absolute;
+    right: -28px; top: -1.7px;
+    border: 14.5px solid transparent;
+    border-left: 14px solid gray;
+   }
+   .attendedr::after {
+    border-left: 13.5px solid white;
+    right: -26px; 
+   }
+   .attendedl{
+	border: 1px gray solid;
+	position: relative;
+	padding: 0.6px 10px;
+}
+.attendedl::before, .attendedl::after {
+    content: ''; 
+    position: absolute;
+    left: -28px; top: -1.7px;
+    border: 14.5px solid transparent;
+    border-right: 14px solid gray;
+   }
+   .attendedl::after {
+    border-right: 13.5px solid white;
+    left: -26px; 
+   }
