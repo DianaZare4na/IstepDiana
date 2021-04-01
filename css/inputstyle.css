@@ -99,5 +99,5 @@
 	display:flex;
 }
 .chek input:checked + label > .lone > .green{
-	margin-right: 50%;
+	margin-left: 50%;
 }

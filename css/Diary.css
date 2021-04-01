@@ -1,8 +1,16 @@
 .header{
-	display: flex;
 	background-color: #1c558a;
 	border: 3px gray solid;
 	border-bottom: none;
+	height: 75px;
+}
+.hed{
+	float: left;
+	display: flex;
+}
+.ava{
+	float: right;
+	margin-right: 25px;
 }
 .home{
 	color: white;
@@ -19,10 +27,6 @@
 }
 .amenu{
 	padding-top: 23px;
-}
-#ava{
-	margin-left: 34em;
-	margin-top: 3px;
 }
 a:hover{
 	text-shadow: 1px 1px 2px black, 0 0 1em white;
@@ -46,8 +50,11 @@ h1{
 .week p:first-child{
 	padding: 0 15px;
 }
-.week small{
+/*.week small{
 	margin-left: 60%;
+}*/
+small{
+	float: right;
 }
 .week img, .meeting img{
 	width: 100px;
