@@ -3,9 +3,7 @@
 	background-color: #1c558a;
 	border: 3px gray solid;
 	border-bottom: none;
-
 }
-
 .home{
 	color: white;
 }
@@ -47,7 +45,6 @@ h1{
 }
 .week p:first-child{
 	padding: 0 15px;
-
 }
 .week small{
 	margin-left: 60%;
@@ -58,7 +55,6 @@ h1{
 .program{
 	border: 1px gray solid;
 	padding:8px 15px 0 20px;
-	
 }
 .program small{
 	margin-left: 41%;
@@ -87,7 +83,6 @@ h2{
 	text-align: center;
 	padding: 20px;
 }
-
 .maine{
 	border: 3px gray solid;
 	border-top: none;
@@ -104,7 +99,6 @@ ul{
 }
 li img{
 	width: 40px;
-	
 }
 .one{
 	font-weight: bolder;
@@ -123,12 +117,12 @@ li img{
     right: -28px; top: -1.7px;
     border: 14.5px solid transparent;
     border-left: 14px solid gray;
-   }
-   .attendedr::after {
+}
+.attendedr::after {
     border-left: 13.5px solid white;
     right: -26px; 
-   }
-   .attendedl{
+}
+.attendedl{
 	border: 1px gray solid;
 	position: relative;
 	padding: 0.6px 10px;
@@ -140,11 +134,11 @@ li img{
     left: -28px; top: -1.7px;
     border: 14.5px solid transparent;
     border-right: 14px solid gray;
-   }
-   .attendedl::after {
+}
+.attendedl::after {
     border-right: 13.5px solid white;
     left: -26px; 
-   }
+}
 .numb{
 	margin-left: 28px;
 	border: 1px gray solid;
@@ -158,45 +152,54 @@ li img{
     right: -28px; top: -1.7px;
     border: 14.5px solid transparent;
     border-left: 14px solid gray;
-   }
-   .numb::after {
+}
+.numb::after {
     border-left: 13.5px solid white;
     right: -26px; 
-   }
-   .numbr{
+}
+.numbr{
 	margin-left: 32px;
 	border: 1px gray solid;
 	position: relative;
 	padding: 0.6px 10px;
-
 }
-
 .numbr::before, .numbr::after {
     content: ''; 
     position: absolute;
     left: -28px; top: -1.7px;
     border: 14.5px solid transparent;
     border-right: 14px solid gray;
-   }
-   .numbr::after {
+}
+.numbr::after {
     border-right: 13.5px solid white;
     left: -26px; 
-   }
-   .graymor{
+}
+.graymor{
    	color:white;
 	background-color: #6d747e;
 	margin-top: 20px;
 	width: 100%;
 	padding: 5px 0;
-   }
-   .lightmor{
+}
+.lightmor{
    	color: #6d747e;
    	background-color: #f0f0f0;
    	margin-top: 5px;
 	width: 100%;
 	padding: 5px 0;
-   }
-   .graymor{
+}
+.graymor{
    	border:none;
    	border-radius: 5px;
-   }
+}
+.lightmor{
+   	border:none;
+   	border-radius: 5px;
+}
+.graymor:hover{
+   	background: linear-gradient(gray, darkgray);
+}
+.lightmor:hover{
+    	color: white;
+    	background: linear-gradient(gray, darkgray);
+}
