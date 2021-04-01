@@ -50,9 +50,6 @@ h1{
 .week p:first-child{
 	padding: 0 15px;
 }
-/*.week small{
-	margin-left: 60%;
-}*/
 small{
 	float: right;
 }
@@ -103,6 +100,8 @@ span{
 ul{
 	list-style-type: none;
 	margin-left: 5%;
+	/*для большого экрана*/
+	/*margin-left: 13%*/
 }
 li img{
 	width: 40px;
@@ -187,6 +186,8 @@ li img{
 	margin-top: 20px;
 	width: 100%;
 	padding: 5px 0;
+	/*для большого экрана*/
+	/*margin-top: 38px;*/
 }
 .lightmor{
    	color: #6d747e;
@@ -194,12 +195,10 @@ li img{
    	margin-top: 5px;
 	width: 100%;
 	padding: 5px 0;
-}
-.graymor{
-   	border:none;
+	border:none;
    	border-radius: 5px;
 }
-.lightmor{
+.graymor{
    	border:none;
    	border-radius: 5px;
 }
@@ -207,6 +206,6 @@ li img{
    	background: linear-gradient(gray, darkgray);
 }
 .lightmor:hover{
-    	color: white;
-    	background: linear-gradient(gray, darkgray);
+    color: white;
+    background: linear-gradient(gray, darkgray);
 }

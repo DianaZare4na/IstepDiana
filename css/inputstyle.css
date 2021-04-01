@@ -4,12 +4,46 @@
 	border: gray solid 1px;
 	padding:8px 60px 8px 20px;
 }
+.inputs label,input{
+	cursor: pointer;
+	position: relative;
+	background: #f3f3f3;
+}
+img{
+	display: block;
+	position: absolute;
+	right: 13px;
+	top: -12px;
+	visibility: hidden;
+}
+input[name="green"]:valid + label img.gr{
+	 visibility: visible;
+}
+input[name="green"]:invalid + label img.re{
+  	visibility: visible;
+}
+input[name="red"]:valid + label img.gr{
+	visibility: visible;
+}
+input[name="red"]:invalid + label img.re{
+  	visibility: visible;
+}
+input[name="green"]:valid ,input[name="red"]:valid{
+ 	border: 1px solid green;
+}
+input[name="green"]:invalid ,input[name="red"]:invalid{
+  	border: 1px solid red;
+}
 .buttons input{
 	margin-right: 10px;
 	border: none;
 	border-radius: 5px;
 	padding:10px 20px;
 	color: white;
+}
+.buttons input:hover{
+	color: white;
+    background: linear-gradient(gray, darkgray);
 }
 .buttons input:first-child{
 	background-color: #43ac45;
@@ -41,63 +75,124 @@
 }
 .inputs input:required:invalid{
 	border-color: red;
+}.box_radioleft{
+	border: 1px solid red;
 }
-#checkone{
-	display: none;
+.box_radioleft{
+	width: 25px;
+	height: 25px;
+	border-radius:50%;
+	cursor: pointer;
+	padding: 3px;
+	box-sizing: border-box;
 }
-#checktwo{
-	display: none;
+.boxrl, .boxrr{
+	width: 17px;
+	height: 17px;
+	border-radius:50%;
 }
-#radioone{
-	display: none;
+input:checked + label > .box_radioleft{
+	border-color: green;
 }
-#radiotwo{
-	display: none;
-}
-.lone{
-	width: 30px;
-	height: 15px;
-	border-radius: 3px;
-	border: green 1px solid;
-}
-.green{
-	width: 50%;
-	height: 100%;
+input:checked + label > .box_radioleft > .boxrl{
 	background-color: green;
-	border-radius: 3px;
 }
-.ltwo{
-	width: 30px;
-	height: 15px;
-	border-radius: 3px;
-	border: red 1px solid;
+.mal{
+	position: absolute;
+	top:0;
+	right:17.7em;
+	font-size: 20px;
 }
-.red{
+.fmal{
+	position: absolute;
+	top:0;
+	right:11.5em;
+	font-size: 20px;
+}
+.per{
+	font-size: 20px;
+	float: left;
+	margin-top: -22px;
+	padding-right: 10px;
+}
+.radio{
+	position: relative;
+	width: 50%;
+}
+#radioone, #radiotwo{
+	display: none;
+}
+.box_radioright{
+	margin-left: 70px;
+	border: 1px solid red;
+	border-radius:50%;
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+	padding: 3px;
+	box-sizing: border-box;
+}
+#my, #myr{
+	display: none;
+}
+.box_wrap{
+	border: 1px solid red;
+}
+.box_wrap, .box_wrapr{
+	width: 50px;
+	height: 20px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+.box{
 	width: 50%;
 	height: 100%;
+	border-radius: 5px;
 	background-color: red;
-	border-radius: 3px;
 }
-.subon{
-	position: absolute;
-	top:0;
-	left:40px;
+input:checked + label > .box_wrap{
+	border-color: green;
 }
-.all{
-	position: relative;
-	padding-right: 100px;
-}
-.subtw{
-	position: absolute;
-	top:0;
-	left:40px;
-}
-.alltwo{
-	position: relative;
-}
-.chek{
-	display:flex;
-}
-.chek input:checked + label > .lone > .green{
+input:checked + label > .box_wrap > .box{
+	background-color: green;
 	margin-left: 50%;
+}
+label{
+	display: inline-block;
+}
+.sub{
+	position: absolute;
+	top:0;
+	right:17.8em;
+	font-size: 20px;
+}
+.box_wrapr{
+	border: 1px solid red;
+	margin-left: 110px;
+	
+}
+.boxr{
+	width: 50%;
+	height: 100%;
+	border-radius: 5px;
+	background-color: red;
+}
+.subr{
+	position: absolute;
+	top:0;
+	right:9.5em;
+	font-size: 20px;
+}
+.checkboxes{
+	position: relative;
+	width: 50%;
+}
+#radioone, #radiotwo{
+	display: none;
+}
+textarea{
+	width: 400px;
+	height: 100px;
+	border-radius: 5px;
+	background: #f3f3f3;
 }

@@ -12,38 +12,52 @@
 		<form action="#" method="post">
 		<h2>Inputs</h2>
 		<div class="inputs">
-			<input type="text" placeholder="Enter some text" pattern="[A-Za-z]{,50}" maxlength="16" required>
-			<input type="text" placeholder="valid texs" pattern="[A-Za-z]{,50}" maxlength="16" required>
-			<input type="text" placeholder="invalid text" pattern="[A-Za-z]{,50}" maxlength="16" required>
+			<input type="text" placeholder="Enter some text" pattern="[A-Za-z]{,50}" maxlength="16">
+			<input type="text" placeholder="valid text" pattern="[A-Za-z]{,50}" maxlength="16" required id="valid" value="valid" name="green">
+			<label for="valid">
+				<img src="img/green.png" alt="" class="gr">
+				<img src="img/red.png" alt="" class="re">
+			</label>
+			<input type="text" placeholder="invalid text" pattern="[A-Za-z]{,50}" maxlength="16" required id="invalid" name="red">
+			<label for="invalid">
+				<img src="img/green.png" alt="" class="gr">
+				<img src="img/red.png" alt="" class="re">
+			</label>
 		</div>
 		<h2>Check boxes</h2>
-		<!-- <div class="chek">
-			<label for="checkone"><div class="all">
-					<div class="lone">
-						<div class="green">
-						</div>
-					</div>
-					<div class="subon">Subscribe</div>
-				</div></label>
-				<input type="checkbox" id="checkone" checked class="all">
-				
-			
-			
-			<label for="checktwo"></label>
-				<input type="checkbox" id="checktwo" class="all">
-				<div class="alltwo">
-					<div class="ltwo">
-						<div class="red">
-						</div>
-					</div>
-					<div class="subtw">Subscribe</div>
-				</div>
-			
-		</div> -->
+		<div class="checkboxes">
+		<input checked type="checkbox" id="my" checked>
+		<label for="my">
+			<div class="box_wrap">
+				<div class="box"></div>
+			</div>
+			<div class="sub">Subscribes</div>
+		</label>
+		<input checked type="checkbox" id="myr">
+		<label for="myr">
+			<div class="box_wrapr">
+				<div class="boxr"></div>
+			</div>
+			<div class="subr">Subscribes</div>
+		</label>
+		</div>
 		<h2>Radio buttons</h2>
+		<div class="per"><p>Gender:</p></div>
 		<div class="radio">
-			<input type="radio" id="radioone" checked class="all"><label for="radioone"></label>
-			<input type="radio" id="radiotwo" class="all"><label for="radiotwo"></label>
+			<input type="radio" id="radioone" checked>
+			<label for="radioone">
+				<div class="box_radioleft">
+					<div class="boxrl"></div>
+				</div>
+				<div class="mal">Male</div>
+			</label>
+			<input type="radio" id="radiotwo">
+			<label for="radiotwo">
+			<div class="box_radioright">
+					<div class="boxrr"></div>
+				</div>
+				<div class="fmal">Female</div>
+			</label>
 		</div>
 		<h2>Buttons</h2>
 		<div class="buttons">
