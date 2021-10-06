@@ -23,17 +23,17 @@ app.use(route);
 // подключим MongoDB
 const mongoose = require("mongoose");
 // Строка соединения с базой данных
-const uri = "mongodb+srv://userdb:QweAsdZxc!23@cluster0.wedqv.mongodb.net/f11_Chat?retryWrites=true&w=majority";
+const uri = "mongodb+srv://Diana:7rq!.LuBG9uz27v@cluster0.oly6b.mongodb.net/chat?retryWrites=true&w=majority";
 mongoose.connect(
-    uri, { useNewUrlParser: true, useUnifiedTopology: true },
-    function (err) {
+   uri, { useNewUrlParser: true, useUnifiedTopology: true },
+   function (err) {
         // Прервать, если ошибка соединения с базой данных
-        if (err){
+      if (err){
             console.log(err);
             return;
-        }
+      }
 
-        app.listen(3000, function () {
+      app.listen(3000, function () {
             console.log("http://localhost:3000");
-        });
-    });
+      });
+   });
