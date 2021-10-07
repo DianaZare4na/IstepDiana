@@ -135,7 +135,18 @@ class UserContainer extends React.Component {
 
    doLogout() {}
 
-   doDelete() {}
+   doDelete() {
+		fetch("/api/users", {
+			method: 'DELETE',
+			headers: { 'Content-Type': 'application/json' },
+			
+		})
+			.then(bandView.doGetBands)
+			.catch((ex) => {
+				console.log("Error: " + ex.message);
+				console.log("Response: " + ex.response);
+			});
+	}
 
    onChange(el){
         // тут формируется оперативная реакция системы на ввод пользователя
@@ -266,6 +277,7 @@ class UserContainer extends React.Component {
 				<div className="card-body">
 					<h5 className="card-title">{this.state.user.name} </h5>
 				</div>
+				<button className="btn" onClick={this.doDelete.bind(this)}>Удалить</button>
 			</div>
       )
    }
