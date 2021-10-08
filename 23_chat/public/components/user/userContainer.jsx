@@ -48,17 +48,17 @@ class UserContainer extends React.Component {
 
 
    delete(){
-		fetch("/api/users", {
-			method: 'DELETE',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({
-			id: this.state._id
-			})
-		})
-			.catch((ex) => {
-			console.log("Error: " + ex.message);
-			console.log("Response: " + ex.response);
-		});
+		// fetch("/api/users", {
+		// 	method: 'DELETE',
+		// 	headers: { 'Content-Type': 'application/json' },
+		// 	body: JSON.stringify({
+		// 	id: this.state._id
+		// 	})
+		// })
+		// 	.catch((ex) => {
+		// 	console.log("Error: " + ex.message);
+		// 	console.log("Response: " + ex.response);
+		// });
 	}
 
 	doCloseForm() {
@@ -197,10 +197,28 @@ doSaveForm(){
 			isReg: false,
 			user: newUser
 		});
+		let contact = document.getElementById("cardid");
+			contact.style.display = "none";
 	}
 
    doDelete() {
-		this.delete(this.state.user);
+		fetch("/api/users", {
+			method: 'DELETE',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({
+				id: JSON.parse(localStorage.getItem('user'))._id
+			})
+		})
+			.catch((ex) => {
+				console.log("Error: " + ex.message);
+				console.log("Response: " + ex.response);
+			});
+		this.setState({
+			isLogin: true,
+			isReg: false,
+		})
+		
+	
 	}
 
    onChange(el){
@@ -327,13 +345,14 @@ doSaveForm(){
 
    renderWelcome(){
       return(
-			<div className="card" key={this.state.user._id}  >
+			<div className="card" id="cardid" key={this.state.user._id}  >
 				<img className="card-img-top" alt=""/>
 				<div className="card-body">
 					<h5 className="card-title">{this.state.user.name} </h5>
 				</div>
 				<button className="btn" onClick={this.doDelete.bind(this)}>Удалить</button>
 				<button className="btn" onClick={this.doOpenEditForm.bind(this)}>Редактировать</button>
+				<button className="btn" onClick={this.doLogout.bind(this)}>Выход</button>
 			</div>
       )
    }
