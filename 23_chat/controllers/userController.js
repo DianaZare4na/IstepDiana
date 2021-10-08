@@ -113,13 +113,13 @@ exports.put = function (request, response) {
 
 // Delete => DELETE
 exports.delete = function (request, response) {
-   console.log("Run DELETE");
-   model.findByIdAndDelete(
-      request.body._id,
-      {},
-      function (err) {
-            if (err) response.send(err);
-            response.sendStatus(200);
-      }
-   );
-}
+	console.log("Run DELETE");
+	model.findByIdAndDelete(
+		{ _id: request.body.id },
+
+		function (err) {
+			if (err) response.send(err);
+			response.sendStatus(200);
+		}
+	);
+}    

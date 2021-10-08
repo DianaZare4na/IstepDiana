@@ -21,7 +21,7 @@ class UserContainer extends React.Component {
       }
    }
 
-
+   
    create(){
       fetch("/api/users",
             {
@@ -44,9 +44,36 @@ class UserContainer extends React.Component {
 
    read(){}
 
-   update(){}
+	update(){}
 
-   delete(){}
+
+   delete(){
+		fetch("/api/users", {
+			method: 'DELETE',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({
+			id: this.state._id
+			})
+		})
+			.catch((ex) => {
+			console.log("Error: " + ex.message);
+			console.log("Response: " + ex.response);
+		});
+	}
+
+	doCloseForm() {
+		this.setState({isEdit: false, user: this.oldUser});
+}
+
+doSaveForm(){
+		if(this.props.create) {
+			this.props.create(this.state.user);
+			this.setState({isEdit:false, user: null});
+		} else {
+			this.props.update(this.state.user);
+			this.setState({isEdit:false});
+		}
+}
 
    doOpenRegForm(){
       let newUser = {
@@ -83,7 +110,15 @@ class UserContainer extends React.Component {
 
 
    doOpenLoginForm(){
-		
+		let newUser = {
+			email: "",
+			password: "",
+		};
+		this.setState({
+			isLogin: true,
+			isReg: false,
+			user: newUser
+		});
 	}
 
    tryLogin() {
@@ -107,45 +142,65 @@ class UserContainer extends React.Component {
             });
    }
 
-   // doOpenEditForm(){
-	// 	this.olduser = this.state.user;
-	// 	if (!this.state.user) {
-	// 		this.state.user = new Object();
-	// 		this.state.user.name = "";
-	// 		// this.state.item.img = "";
-	// 		// this.state.item.gallery = [];
-	// 	}
-	// 	this.setState({isEdit: true});
-   // }
-	// doCloseForm() {
-	// 	this.setState({isEdit: false, user: this.olduser});
-	// }
+   doOpenEditForm(){
+		this.olduser = this.state.user;
+		if (!this.state.user) {
+			this.state.user = new Object();
+			this.state.user.name = "";
+			// this.state.item.img = "";
+			// this.state.item.gallery = [];
+		}
+		this.setState({isEdit: true});
+   }
+	doCloseForm() {
+		this.setState({isEdit: false, user: this.olduser});
+	}
 
-	// doSaveForm(){
-	// 	if(this.props.create) {
-	// 		this.props.create(this.state.user);
-	// 		this.setState({isEdit:false, user: null});
-	// 	} else {
-	// 		this.props.update(this.state.user);
-	// 		this.setState({isEdit:false});
-	// 	}
-	// }
+	doSaveForm(){
+		if(this.props.create) {
+			this.props.create(this.state.user);
+			this.setState({isEdit:false, user: null});
+		} else {
+			this.props.update(this.state.user);
+			this.setState({isEdit:false});
+		}
+	}
 
-   doUpdate() {}
+   doUpdate(user) {
+		this.setState({
+			isLoaded: false,
+			user
+		});
+		fetch("/api/users",
+			{
+				method: 'PUT',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(user)
+			}
+		)
+			.then(response => { })
+			.then(item => { this.setState({ isLoaded: true }); })
+			.catch(err => {
+				console.log(err);
+			});
 
-   doLogout() {}
+		
+	}
+
+   doLogout() {
+		let newUser = {
+			email: "",
+			password: "",
+		};
+		this.setState({
+			isLogin: true,
+			isReg: false,
+			user: newUser
+		});
+	}
 
    doDelete() {
-		fetch("/api/users", {
-			method: 'DELETE',
-			headers: { 'Content-Type': 'application/json' },
-			
-		})
-			.then(bandView.doGetBands)
-			.catch((ex) => {
-				console.log("Error: " + ex.message);
-				console.log("Response: " + ex.response);
-			});
+		this.delete(this.state.user);
 	}
 
    onChange(el){
@@ -157,7 +212,7 @@ class UserContainer extends React.Component {
 
    renderRegisterForm(){
       return(
-            <div>
+            <div id="regform">
                <form className="form-horizontal">
                   <fieldset>
                         <div id="legend">
@@ -209,29 +264,29 @@ class UserContainer extends React.Component {
       )
    }
 
-   // renderEditForm(){
-   //    return( 
+   renderEditForm(){
+      return( 
 		
-	// 		<form>
-	// 			<input type="hidden" className="form-control" id="_id" name="_id"/>
-	// 			<div className="mb-3">
-	// 					<label className="form-label">Имя</label>
-	// 					<input value={this.state.user.name} type="text" className="form-control" id="name" name="name" onChange={this.onChange.bind(this)}/>
-	// 			</div>
-	// 			<div className="mb-3">
-	// 					<label className="form-label">Email</label>
-	// 					<input value={this.state.user.email} type="number" className="form-control" id="price" name="price" onChange={this.onChange.bind(this)}/>
-	// 			</div>
-	// 			<button type="button" className="btn btn-secondary" onClick={this.doCloseForm.bind(this)}> Close </button>
-	// 			<button type="button" className="btn btn-success" onClick={this.doSaveForm.bind(this)}> Save</button>
-	// 		</form>
-	// 	)
-	// }
+			<form>
+				<input type="hidden" className="form-control" id="_id" name="_id"/>
+				<div className="mb-3">
+						<label className="form-label">Имя</label>
+						<input value={this.state.user.name} type="text" className="form-control" id="name" name="name" onChange={this.onChange.bind(this)}/>
+				</div>
+				<div className="mb-3">
+						<label className="form-label">Email</label>
+						<input value={this.state.user.email} type="number" className="form-control" id="price" name="price" onChange={this.onChange.bind(this)}/>
+				</div>
+				<button type="button" className="btn btn-secondary" onClick={this.doCloseForm.bind(this)}> Close </button>
+				<button type="button" className="btn btn-success" onClick={this.doSaveForm.bind(this)}> Save</button>
+			</form>
+		)
+	}
 
    renderLoginForm(){
       return(
             <div>
-               <div>
+               <div id="logHide">
                   <form className="form-horizontal">
                         <fieldset>
                            <div id="legend">
@@ -278,6 +333,7 @@ class UserContainer extends React.Component {
 					<h5 className="card-title">{this.state.user.name} </h5>
 				</div>
 				<button className="btn" onClick={this.doDelete.bind(this)}>Удалить</button>
+				<button className="btn" onClick={this.doOpenEditForm.bind(this)}>Редактировать</button>
 			</div>
       )
    }

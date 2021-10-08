@@ -1,0 +1,129 @@
+body {
+	font-family: "Russo One";
+	/* width: 1200px; */
+	margin: auto; }
+body * {
+	margin: 0;
+	padding: 0; }
+body header {
+	background-color: #000;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	color: #fff;
+	height: 75px;
+	padding: 25px 20px;
+	position: relative; }
+body header .logo {
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	width: 350px; }
+body header .logo h1 {
+	font-size: 24px;
+	font-weight: normal; }
+body header .logo h1:hover {
+	font-size: 26px;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
+	position: fixed; }
+body header nav {
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1; }
+body header nav .cursecontact {
+	margin-left: 30px; }
+body header nav .cursecontact .nav {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex; }
+body header nav .cursecontact .nav a {
+	display: inline-block;
+	color: #fff;
+	text-decoration: none;
+	font-size: 14px;
+	font-weight: normal; }
+body header nav .cursecontact .nav .aleft {
+	margin-right: 13px; }
+body header nav .cursecontact .nav a:hover {
+	font-size: 16px;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
+	position: absolute; }
+body header nav .cursecontact .nav #contact {
+	color: #fff;
+	text-decoration: none;
+	font-size: 14px;
+	font-weight: normal;
+	margin-left: 20px;
+	}
+body header nav .cursecontact .nav #contact:hover {
+	font-size: 16px;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
+	position: absolute; }
+body header nav .cursecontact .contacttelegramm {
+	background-color: #000;
+	position: absolute;
+	top: 24px;
+	left: 400px;
+	font-size: 14px;
+	display: none; }
+body header nav .cursecontact div.line {
+	background-color: #fff;
+	width: 171px;
+	height: 3px; }
+body header nav .cursecontact p {
+	margin: 4px;
+	font-size: 10px; }
+body header div.headinst {
+	-webkit-box-flex: 2;
+	-ms-flex: 2;
+	flex: 2;
+position: relative; }
+body header div.headinst div.instagram { 
+	position: absolute;
+	right: 10px;
+ }
+a{
+	color: #fff;
+	padding-right: 10px;
+}
+
+span{
+	position: absolute;
+	top: 24px;
+	right: 150px;
+	color: #fff;
+}
+#logHide{
+	display: none;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	-webkit-box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+	padding: 20px;
+	
+}
+
+input{
+	margin: 20px 0px;
+	padding: 10px;
+}
+#logHide button{
+	margin-top: 10px;
+}
+
+#regform{
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	-webkit-box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+	padding: 20px;
+}
+#regform button{
+	margin-top: 10px;
+}
