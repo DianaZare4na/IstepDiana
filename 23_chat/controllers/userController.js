@@ -1,5 +1,6 @@
 // TODO: подключить модель для сущности
 const model = require("../models/user");
+const modelSession = require("../models/session");
 // Create => POST
 exports.post = function (request, response) {
    console.log("Run POST");
@@ -80,6 +81,36 @@ exports.testByEmail = function (request, response) {
    );
 }
 
+exports.tryLogin = function (request, response) {
+	const {email} = request.params;
+	const {password} = request.params;
+	model.find({email: email, password: password},
+		 function (err, allData ) {
+			  if (err){
+					console.log(err);
+					return err;
+			  }
+			  // На основе найденного пользователя
+			  if(allData.length != 1) {response.send(false);}
+			  let useSession = new modelSession();
+			  useSession.user_id = allData[0]._id;
+			  useSession.created_at= Date(); // DateTime
+			  useSession.last_activity_at =Date();
+			  useSession.data["user"] = allData[0];
+
+			  useSession.save(function (err) {
+					if (err) {
+						 console.log(err);
+						 return err;
+					}
+					return response.send(useSession._id);
+			  });
+
+			  // response.json(allData);
+		 }
+	);
+}
+
 // Найти пользователя по email & password
 exports.findByEmailPswd = function (request, response) {
    const {email} = request.params;
@@ -116,10 +147,35 @@ exports.delete = function (request, response) {
 	console.log("Run DELETE");
 	model.findByIdAndDelete(
 		{ _id: request.body.id },
+		// request.body._id,
+		// {},
+		function (err) {
+			if (err) response.send(err);
+			response.sendStatus(200);
+ 		}
+	);
+ }    
+
+exports.updateSessionTime = function (request, response) {
+	console.log("Update Session");
+	modelSession.updateOne(
+		 {_id: request.body._id},
+		 {last_activity_at: Date()},
+		 function (err, result) {
+			  if (err) {console.log(err); response.send(err);}
+			  response.send(result);
+		 }
+	);
+}
+
+exports.deleteSession = function (request, response) {
+	console.log("Run DELETE");
+	model.findByIdAndDelete(
+		{ _id: request.body.id },
 
 		function (err) {
 			if (err) response.send(err);
 			response.sendStatus(200);
 		}
 	);
-}    
+}   

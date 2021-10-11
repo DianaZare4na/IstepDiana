@@ -21,7 +21,34 @@ class UserContainer extends React.Component {
       }
    }
 
-   
+	updateSessionActivity(){
+		fetch("/api/user/sessionUpdate",
+			{
+				method: 'PUT',
+				headers: {'Content-Type': 'application/json'},
+				body: JSON.stringify({_id: this.state.session_id})
+			}
+		)
+			.then(response => {
+				if (response.status != 200) {
+						console.log("Error Session update");
+				}
+			})
+			.catch(err => {
+				this.setState({error: err});
+			});
+}
+   componentDidMount(){
+		let s = window.localStorage.getItem("session_id");
+        if (s) {
+            this.setState({
+                session_id: s,
+                isLogin : true
+            });
+            this.UpInterval =
+                setInterval(this.updateSessionActivity.bind(this),5000);
+        }
+	}
    create(){
       fetch("/api/users",
             {
@@ -122,21 +149,38 @@ doSaveForm(){
 	}
 
    tryLogin() {
-		console.log("/api/user/findbyemailpswd/" + this.state.user.email + "/" + this.state.user.password);
-      fetch("/api/user/findbyemailpswd/" + this.state.user.email + "/" + this.state.user.password)
+		fetch("/api/user/trylogin/" + this.state.user.email + "/" + this.state.user.password)
             .then(response => response.json())
-            .then (users => {
-               console.log(users);
-               if(users.length != 1 ){
-                  console.log(" Что то не так в базе");
-                    // Поведение, если нет пользователя
-               } else {
-                  this.setState({
-                        isLogin: true,
-                        user: users[0]
-                  })
-               }
+            .then(session=> {
+                console.log(session);
+                if (session === false) {
+                    this.setState({error: {message: "Login Error"}});
+                    // Тут мы можем вообще анализировать и выводить состояние
+                    // типа не верный логин пароль и тд
+                } else {
+                    this.setState({
+                        session_id: session,
+                        isLogin: true
+                    })
+						  window.localStorage.setItem("session_id", session);
+                    this.UpInterval = setInterval(this.updateSessionActivity.bind(this),5000);
+                }
             })
+		// console.log("/api/user/findbyemailpswd/" + this.state.user.email + "/" + this.state.user.password);
+      // fetch("/api/user/findbyemailpswd/" + this.state.user.email + "/" + this.state.user.password)
+      //       .then(response => response.json())
+      //       .then (users => {
+      //          console.log(users);
+      //          if(users.length != 1 ){
+      //             console.log(" Что то не так в базе");
+      //               // Поведение, если нет пользователя
+      //          } else {
+      //             this.setState({
+      //                   isLogin: true,
+      //                   user: users[0]
+      //             })
+      //          }
+      //       })
             .catch(err => {
                this.setState({error: err});
             });
@@ -188,18 +232,34 @@ doSaveForm(){
 	}
 
    doLogout() {
-		let newUser = {
-			email: "",
-			password: "",
-		};
-		this.setState({
-			isLogin: true,
-			isReg: false,
-			user: newUser
-		});
-		let contact = document.getElementById("cardid");
-			contact.style.display = "none";
+		fetch("/api/user/sessionDelete",
+            {
+                method: 'DELETE',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({_id: this.state.session_id})
+            }
+        )
+            .then(response => {
+                if (response.status != 200) {
+                    console.log("Error Session close");
+                }else {
+                    clearInterval( this.UpInterval );
+                    this.setState({
+                        session_id: null,
+                        isLogin: false
+                    })
+
+                }
+            })
+            .catch(err => {
+                this.setState({error: err});
+            });
+
+        // Удалить с клиента
+        localStorage.removeItem("session_id");
 	}
+	// 	
+	
 
    doDelete() {
 		fetch("/api/users", {

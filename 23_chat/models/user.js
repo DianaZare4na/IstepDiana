@@ -12,4 +12,4 @@ const User = new Schema({
 });
 
 // Экспортируем модель нашего студента
-module.exports = mongoose.model("User", User);
+module.exports = mongoose.model("User", User);  
