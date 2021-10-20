@@ -1,0 +1,121 @@
+body{
+	font-family: Roboto;
+}
+.container-fluid{
+	color: aliceblue;
+	background: linear-gradient(#121517, #14AFAF	);
+	padding-top: 31px;
+}
+
+.bluemain{
+	height: 798px;
+}
+.ul-nav{
+	list-style-type: none;
+	display: flex;
+	margin-left: -28px;
+	padding: 0;
+	font-weight: 400;
+	font-size: 19px;
+}
+.ul-nav li .nav-link{
+	color: #ffffff;
+}
+.ul-nav li{
+	margin-right: 20px;
+}
+
+.logo-img-flex{
+	display: flex;
+}
+.logo-img{
+	background-image: url("../img/logo/Group.png");
+	width: 250px;
+	height: 46px;
+	margin-left: -25px;
+}
+.line-after-king{
+	height: 46px;
+	width: 1px;
+	background-color: #fff;
+	margin-left: 20px;
+}
+.phoneNumber{
+	display: flex;
+	margin-right: -160px;
+	margin-top: 9px;
+}
+.phoneImg{
+	background-image: url("../img/logo/phone.png");
+	width: 16%;
+	height: 16px;
+	background-repeat: no-repeat;
+	margin-top: 8px;
+}
+
+.organization-p-first-top{
+	font-weight: 300;
+	font-size: 25px;
+	margin-top: 65px;
+	margin-left: 93px;
+}
+h1{
+	font-weight: 400;
+	font-size: 70px;
+	margin-left: 105px;
+}
+.button-event-block{
+	width: 230px;
+	margin-top: 50px;
+	margin-left: 129px;
+}
+.button-event-top{
+	display: flex;
+	justify-content: space-between;
+	width: 210px;
+}
+.button-event-top-left{
+	width: 70px;
+	height: 1px;
+	background-color: #fff;
+}
+.button-event-top-right{
+	width: 70px;
+	height: 1px;
+	background-color: #fff;
+}
+.button-event-a-flex{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.button-event-a-left{
+	width: 1px;
+	height: 54px;
+	background-color: #fff;
+}
+.button-event{
+	color:#fff;
+	font-size: 21px;
+}
+.button-event-a-right{
+	width: 1px;
+	height: 54px;
+	background-color: #fff;
+	margin-right: 20px;
+}
+.button-event-down{
+	display: flex;
+	justify-content: space-between;
+	width: 210px;
+}
+.button-event-down-left{
+	width: 70px;
+	height: 1px;
+	background-color: #fff;
+}
+.button-event-down-right{
+	width: 70px;
+	height: 1px;
+	background-color: #fff;
+}
