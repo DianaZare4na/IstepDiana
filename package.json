@@ -1,5 +1,5 @@
 {
-  "name": "23_chat",
+  "name": "dz",
   "version": "1.0.0",
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -19,7 +19,20 @@
     "path": "^0.12.7",
     "react-router-dom": "^5.3.0"
   },
-  "devDependencies": {
-    "connect-flash": "^0.1.1"
-  }
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DianaZare4na/IstepDiana.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DianaZare4na/IstepDiana/issues"
+  },
+  "homepage": "https://github.com/DianaZare4na/IstepDiana#readme"
 }
