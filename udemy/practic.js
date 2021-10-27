@@ -1,12 +1,12 @@
 let numberOfFilm;
 
-function start() {
-	numberOfFilm = +promt("Сколько фильмов вы уже посмотрели?", "");
-	while (numberOfFilm == '' || numberOfFilm == null || isNaN(numberOfFilm)) {
-		numberOfFilm = +promt("Сколько фильмов вы уже посмотрели?", "");
-	}
-}
-start();
+// function start() {
+// 	numberOfFilm = +promt("Сколько фильмов вы уже посмотрели?", "");
+// 	while (numberOfFilm == '' || numberOfFilm == null || isNaN(numberOfFilm)) {
+// 		numberOfFilm = +promt("Сколько фильмов вы уже посмотрели?", "");
+// 	}
+// }
+// start();
 
 const personaLMovieDB = {
 	count: numberOfFilm,
@@ -20,20 +20,20 @@ const personaLMovieDB = {
 
 
 
-	function remembermyFilms() {
-		for(let i = 0; i = 2; i++){
-			const a = prompt("Один из последних просмотренных фильмрв?", ""),
-					b = prompt("На сколько оцените его?", "");
-			if(a != null && b != null && a != '' && b != '' && a.length < 50){
-				personaLMovieDB.movies[a] = b;
-				console.log('done');
-			}else{
-				console.log('error');
-				i--;
-			}
-		}
-	}
-	remembermyFilms();
+	// function remembermyFilms() {
+	// 	for(let i = 0; i = 2; i++){
+	// 		const a = prompt("Один из последних просмотренных фильмрв?", ""),
+	// 				b = prompt("На сколько оцените его?", "");
+	// 		if(a != null && b != null && a != '' && b != '' && a.length < 50){
+	// 			personaLMovieDB.movies[a] = b;
+	// 			console.log('done');
+	// 		}else{
+	// 			console.log('error');
+	// 			i--;
+	// 		}
+	// 	}
+	// }
+	// remembermyFilms();
 
 	
 	function detectpersonalLevel() {
@@ -61,3 +61,13 @@ const personaLMovieDB = {
 	
 
 console.log(personaLMovieDB);
+//Раздел 2. 12.Практика,ч.1.
+
+const a = promt('Один из последних просиотренных фильмов?', ''),
+		b = promt('На сколько оцените его?', ''),
+		c = promt('Один из последних просиотренных фильмов?', ''),
+		d = promt('На сколько оцените его?', '');
+
+
+personaLMovieDB.movies[a] = b;
+personaLMovieDB.movies[c] = d;

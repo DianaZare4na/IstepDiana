@@ -1,5 +1,6 @@
 import React from "react";
 import WidgetActorDOBItems from "./widgetActorDOBItem";
+import moment from "moment";
 
 export default class WidgetActorDOB extends React.Component {
 
@@ -18,28 +19,29 @@ export default class WidgetActorDOB extends React.Component {
     // ShowWait(){ console.log(this.state.actors); }
 
     componentDidMount() {
-        if(window.localStorage.getItem("actors"+ Date() )!== null){
+        if(window.localStorage.getItem("actors"+  moment().format('YYYY-MM-DD'))!== null){
             this.getFromLocalStorage();
             this.setState({isLoaded: true});
             // setTimeout(this.ShowWait.bind(this), 1000);
         } else {
-            this.readAllFromDB();
+            //this.readAllFromDB();
         }
     }
 
     putToLocalStorage(){
         // + Date() - для сохранения даты
-        window.localStorage.setItem("actors"+ Date() , JSON.stringify(this.state.actors) );
+        // search_dtt  search_Запрос
+        window.localStorage.setItem("actors" +moment().format('YYYY-MM-DD') , JSON.stringify(this.state.actors) );
     }
 
     getFromLocalStorage(){
-        this.setState({actors: JSON.parse( window.localStorage.getItem("actors" + Date()))});
+        this.setState({actors: JSON.parse( window.localStorage.getItem("actors" + moment().format('YYYY-MM-DD')))});
     }
 
     readByOneFromDB(num){
-        if (num > 5) {
-            //this.putToLocalStorage();
-            //this.setState({isLoaded: true});
+        if (num === this.state.items.length) {
+            this.putToLocalStorage();
+            this.setState({isLoaded: true});
             return;
         } // получать только 5 актеров
         let tmp = this.state.items[num].split('/'); // разбить строку для получения номера
@@ -48,7 +50,7 @@ export default class WidgetActorDOB extends React.Component {
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "imdb8.p.rapidapi.com",
-                "x-rapidapi-key": "b5a38f556emsh0c472e1de221194p1c7771jsn33bf9c1c6ddf"
+                "x-rapidapi-key": "7e2afce0b1msh7f5c23d92a82e63p15d2e7jsn1fb4d1a13ff8"
             }
         })
             .then(response => response.json())
@@ -75,7 +77,7 @@ export default class WidgetActorDOB extends React.Component {
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "imdb8.p.rapidapi.com",
-                "x-rapidapi-key": "b5a38f556emsh0c472e1de221194p1c7771jsn33bf9c1c6ddf"
+                "x-rapidapi-key": "7e2afce0b1msh7f5c23d92a82e63p15d2e7jsn1fb4d1a13ff8"
             }
         })
             .then(response => response.json())
@@ -106,44 +108,44 @@ export default class WidgetActorDOB extends React.Component {
 
     // Вывод основного состояния компонента
     renderData(){
+        if (this.state.actors === null){
+            return (
+                <h3> No Actors </h3>
+            )
+        }
 
-		if (this.state.actors === null){
-			return (
-				 <h3> No Actors </h3>
-			)
-	  }
+        return (
+            <section className="probootstrap_section">
+                <div className="container">
+                    <div className="row text-center mb-5 probootstrap-animate">
+                        <div className="col-md-12">
+                            <h2 className="display-4 border-bottom probootstrap-section-heading">Именниники</h2>
+                        </div>
+                    </div>
 
-	  return (
-			<section className="probootstrap_section">
-				 <div className="container">
-					  <div className="row text-center mb-5 probootstrap-animate">
-							<div className="col-md-12">
-								 <h2 className="display-4 border-bottom probootstrap-section-heading">Именниники</h2>
-							</div>
-					  </div>
+                    <div className="row probootstrap-animate">
+                        <div className="col-md-12">
+                            <div className="owl-carousel js-owl-carousel-2">
 
-					  <div className="row probootstrap-animate">
-							<div className="col-md-12">
-								 <div className="owl-carousel js-owl-carousel-2">
-
-									  {
-											this.state.actors.map(a =>
-												 <WidgetActorDOBItems key={a.id} a={a}></WidgetActorDOBItems>
-											)
-									  }
-
+                                {
+                                    this.state.actors.map(a =>
+                                        <WidgetActorDOBItems key={a.id} a={a}></WidgetActorDOBItems>
+                                    )
+                                }
 
 
 
 
-								 </div>
-							</div>
-					  </div>
-				 </div>
-			</section>
 
-	  );
- }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        );
+    }
+
     // Компонент в состоянии загрузки
     renderLoading(){
         return (

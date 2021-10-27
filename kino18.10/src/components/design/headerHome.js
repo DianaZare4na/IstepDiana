@@ -9,14 +9,12 @@ export  default class HeaderHome extends React.Component {
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-md">
-                            <h2 className="heading mb-2 display-4 font-light 1probootstrap-animate">Explore The World With Ease</h2>
-                            <p className="lead mb-5 1probootstrap-animate">
-
-
+                            <h2 className="heading mb-2 display-4 font-light probootstrap-animate fadeInUp probootstrap-animated">Explore The World With Ease</h2>
+                            <p className="lead mb-5 probootstrap-animate fadeInUp probootstrap-animated">
                             </p>
                             <a href="onepage.html" role="button" className="btn btn-primary p-3 mr-3 pl-5 pr-5 text-uppercase d-lg-inline d-md-inline d-sm-block d-block mb-3">See OnePage Verion</a>
                     </div>
-                    <div className="col-md 1probootstrap-animate">
+                    <div className="col-md probootstrap-animate fadeInUp probootstrap-animated">
                         <form action="#" className="probootstrap-form">
                             <div className="form-group">
                                 <div className="row mb-3">

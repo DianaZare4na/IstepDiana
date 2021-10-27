@@ -16,6 +16,7 @@ export  default class MenuTop extends React.Component {
                     <div className="collapse navbar-collapse" id="probootstrap-menu">
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item"><Link className="nav-link" to="/">Home</Link></li>
+                            <li className="nav-item"><Link className="nav-link" to="/album">Album</Link></li>
                             <li className="nav-item"><Link className="nav-link" to="/contact">Contact</Link></li>
                         </ul>
                     </div>

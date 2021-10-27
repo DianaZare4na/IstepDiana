@@ -86,6 +86,7 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 					i++;
 
 					$(this.element).addClass('item-animate');
+					//console.log("K=" + k);
 					setTimeout(function(){
 
 						$('body .probootstrap-animate.item-animate').each(function(k){
@@ -102,7 +103,7 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 									el.addClass('fadeInUp probootstrap-animated');
 								}
 								el.removeClass('item-animate');
-							},  k * 50, 'easeInOutExpo' );
+							},  1 * 1500, 'easeInOutExpo' );
 						});
 						
 					}, 50);

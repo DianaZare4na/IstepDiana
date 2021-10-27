@@ -10,7 +10,8 @@ import {
     Route
 } from "react-router-dom";
 import PageError from "./components/pages/pageError";
-import WidgetActorDOB from "./components/imdb/dob/widgetActorDOB";
+// import WidgetActorDOB from "./components/imdb/dob/widgetActorDOB";
+import PageAlbum from "./components/pages/pageAlbum";
 
 function App() {
   return (
@@ -23,11 +24,13 @@ function App() {
             <Route path="/contact">
                 <PageContact></PageContact>
             </Route>
+            <Route path="/album">
+                <PageAlbum></PageAlbum>
+            </Route>
             <Route>
                 <PageError error={"404 Not Found"}></PageError>
             </Route>
         </Switch>
-        <WidgetActorDOB></WidgetActorDOB>
 		  <Footer></Footer>
     </Router>
   );

@@ -1,0 +1,33 @@
+ul{
+	list-style-type: none;
+}
+.cardAllArtist{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.cardArtist{
+	border: 1px solid gray;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 27%;
+	margin: 20px;
+	padding: 20px;
+}
+.imgArtist{
+	width: 250px;
+	margin: 20px;
+	border-radius: 10px;
+}
+.imgArtist img{
+	width: 100%;
+}
+.nameArtist{
+	width: 100%;
+}
+.nameArtist{
+	font-size: 1.2rem;
+	text-align: center;
+}
