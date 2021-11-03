@@ -1,0 +1,58 @@
+ul{
+	list-style-type: none;
+}
+.cardAllArtist{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.cardArtist{
+	border: 1px solid gray;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 27%;
+	margin: 20px;
+	padding: 20px;
+}
+.imgArtist{
+	width: 250px;
+	margin: 20px;
+	border-radius: 10px;
+}
+.imgArtist img{
+	width: 100%;
+}
+.nameArtist{
+	width: 100%;
+}
+.nameArtist{
+	font-size: 1.2rem;
+	text-align: center;
+}
+.bartist{
+	font-size: 28px;
+	font-weight: bold;
+}
+.bartist li{
+	border: 1px solid gray;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 10px;
+}
+.renAlb{
+	padding: 0;
+	font-size: 20px;
+	font-weight: 500;
+	border-radius: 5px;
+	background-color: dimgray;
+	color: #fff;
+}
+.renAlb li{
+	padding: 10px;
+	margin: 10px;
+	border: 1px solid #fff;
+	border-radius: 5px;
+
+}
