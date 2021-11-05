@@ -1,0 +1,78 @@
+body{
+	background:linear-gradient(#13bdf1, #dfaa7e, #f35e26);
+	background-size: 100vh;
+}
+.App {
+	width: 1300px;
+	min-height: 100vh;
+	text-align: center;
+	height: 800px;
+}
+#diana{
+	position: relative;
+	/* margin-right: 200px; */
+}
+.cloth{
+	position: absolute;
+}
+
+.left{
+	position: absolute;
+	top: -500px;
+	left: -50px;
+}
+
+.Onleft{
+	position: absolute;
+	top: -280px;
+	left: 530px;
+}
+.Onright{
+	top: -280px;
+	left: 605px;
+}
+.right{
+	position: absolute;
+	top: -500px;
+	left: -60px;
+}
+.wonder{
+	position: absolute;
+	top: 0;
+	left: 170px;
+}
+.Onwonder{
+	position: absolute;
+	top: 4px;
+	left: 405px;
+}
+.sword{
+	position: absolute;
+	top: -100px;
+	left: 40px;
+}
+.Onsword{
+	position: absolute;
+	top: -100px;
+	left: 40px;
+}
+.black{
+	position: absolute;
+	top: 0;
+	right: 320px;
+}
+.Onblack{
+	position: absolute;
+	top: 3px;
+	right: 790px;
+}
+.blue{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.Onblue{
+	position: absolute;
+	top: 4px;
+	right: 790px;
+}
