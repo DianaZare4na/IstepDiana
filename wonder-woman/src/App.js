@@ -1,14 +1,13 @@
-// import logo from './logo.svg';
 import './App.css';
-import Diana from './components/diana';
+import DianaGirl from "./components/DianaGirl/DianaGirl";
 
 
 function App() {
-  return (
-    <div className="App">
-		 <Diana></Diana>
-    </div>
-  );
+return (
+	<div className="container">
+		<DianaGirl></DianaGirl>
+	</div>
+);
 }
 
 export default App;
